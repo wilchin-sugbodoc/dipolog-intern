@@ -27,7 +27,7 @@
       markerStyle: {
         initial: {
           r: 9,
-          fill: "#2d66f7",
+          fill: "#8B0000",
           "fill-opacity": 0.9,
           stroke: "#fff",
           "stroke-width": 9,
