@@ -1,19 +1,16 @@
-function printInvoice() {
-  let lastRow = document.querySelector(".table tr:last-child");
-  if (lastRow) lastRow.style.display = "none";
-
-  window.print();
-
-  if (lastRow) lastRow.style.display = "";
-}
-
-function downloadInvoice() {
+function downloadEmail() {
   let newWindow = window.open("", "_blank");
 
-  let invoiceElement = document.querySelector(".card-body").cloneNode(true);
+  let emailElement = document.querySelector(".email-body").cloneNode(true);
+  let emailHeaderFrom = document.querySelector(".email-from").cloneNode(true);
+  let emailHeaderTo = document.querySelector(".email-to").cloneNode(true);
+  let emailHeaderDate = document.querySelector(".email-date").cloneNode(true);
 
-  let lastRow = invoiceElement.querySelector(".table tr:last-child");
-  if (lastRow) lastRow.remove();
+  let attachments = emailElement.querySelector(".email-attch");
+  if (attachments) attachments.remove();
+
+  let files = emailElement.querySelector(".row");
+  if (files) files.remove();
 
   newWindow.document.write(`
         <html>
@@ -26,15 +23,20 @@ function downloadInvoice() {
                 </style>
             </head>
             <body>
-                <div class="card-body">${invoiceElement.innerHTML}</div>
+                <div class="card-body">
+                From: ${emailHeaderFrom.innerHTML}<br>
+                Receiver: ${emailHeaderTo.innerHTML}<br>
+                Date: ${emailHeaderDate.innerHTML}<br>
+                ${emailElement.innerHTML}
+                </div>
                 <script>
                     window.onload = function() {
                         let invoiceContent = document.querySelector('.card-body');
 
                         html2pdf()
                             .set({
-                                margin: 0.5,
-                                filename: 'invoice.pdf',
+                                margin: 5,
+                                filename: 'Email.pdf',
                                 image: { type: 'jpeg', quality: 0.90 },
                                 html2canvas: { scale: 1, useCORS: true },
                                 jsPDF: { unit: 'mm', format: 'letter', orientation: 'landscape' }
