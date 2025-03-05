@@ -8,47 +8,18 @@ function printInvoice() {
 }
 
 function downloadInvoice() {
-  let newWindow = window.open("", "_blank");
+  var element = document.querySelector(".card-body").cloneNode(true);
+  element.style.height = "1500px";
 
-  let invoiceElement = document.querySelector(".card-body").cloneNode(true);
+  var buttonRow = element.querySelector("#not-included");
+  if (buttonRow) {
+    buttonRow.remove();
+  }
+  var opt = {
+    margin: [-100, 0, 0, 0],
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 3 },
+  };
 
-  let lastRow = invoiceElement.querySelector(".table tr:last-child");
-  if (lastRow) lastRow.remove();
-
-  newWindow.document.write(`
-        <html>
-            <head>
-                <title>Invoice</title>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-                <style>
-                    body { font-family: Arial, sans-serif; margin: 20px; padding: 0; }
-                    .card-body { width: 100%; max-width: 800px; margin: auto; }
-                </style>
-            </head>
-            <body>
-                <div class="card-body">${invoiceElement.innerHTML}</div>
-                <script>
-                    window.onload = function() {
-                        let invoiceContent = document.querySelector('.card-body');
-
-                        html2pdf()
-                            .set({
-                                margin: 0.5,
-                                filename: 'invoice.pdf',
-                                image: { type: 'jpeg', quality: 0.90 },
-                                html2canvas: { scale: 1, useCORS: true },
-                                jsPDF: { unit: 'mm', format: 'letter', orientation: 'landscape' }
-                            })
-                            .from(invoiceContent)
-                            .save()
-                            .then(() => {
-                                window.close(); // Close the new tab after download
-                            });
-                    };
-                </script>
-            </body>
-        </html>
-    `);
-
-  newWindow.document.close();
+  html2pdf().set(opt).from(element).save("invoice.pdf");
 }

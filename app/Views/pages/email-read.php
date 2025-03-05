@@ -134,121 +134,132 @@
                 </button>
             </div>
             <div class="card-body">
-                <div class="email-media">
-                    <div class="mt-0 d-sm-flex">
-                        <img class="mr-2 rounded-circle avatar avatar-lg"
-                            src="<?php echo base_url('public/assets/images/users/2.jpg'); ?>" alt="avatar">
-                        <div class="media-body pt-0">
-                            <div class="float-right d-none d-md-flex fs-15">
-                                <small class="mr-3 mt-1 text-muted">Sep 13 , 2019 12:45 pm</small>
-                                <a class="mr-3" data-toggle="tooltip" title="" data-original-title="Rated"><svg
-                                        class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="24"
-                                        viewBox="0 0 24 24" width="24">
-                                        <path d="M0 0h24v24H0V0z" fill="none" />
-                                        <path
-                                            d="M17.11 10.83l-2.47-.21-1.2-.1-.47-1.11L12 7.13l-.97 2.28-.47 1.11-1.2.1-2.47.21 1.88 1.63.91.79-.27 1.17-.57 2.42 2.13-1.28 1.03-.63 1.03.63 2.13 1.28-.57-2.42-.27-1.17.91-.79z"
-                                            opacity=".3" />
-                                        <path
-                                            d="M22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24zm-7.41 5.18l.56 2.41-2.12-1.28-1.03-.62-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.16z" />
-                                    </svg></a>
-                                <a class="mr-3" data-toggle="tooltip" title="" data-original-title="Reply"><svg
-                                        class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="24"
-                                        viewBox="0 0 24 24" width="24">
-                                        <path d="M0 0h24v24H0V0z" fill="none" />
-                                        <path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z" />
-                                    </svg></a>
-                                <div class="mr-3">
-                                    <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true"
-                                        aria-expanded="false"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg"
-                                            height="24" viewBox="0 0 24 24" width="24">
+                <div id="print-email">
+                    <div class="email-media">
+                        <div class="mt-0 d-sm-flex">
+                            <img class="mr-2 rounded-circle avatar avatar-lg"
+                                src="<?php echo base_url('public/assets/images/users/2.jpg'); ?>" alt="avatar">
+                            <div class="media-body pt-0">
+                                <div class="float-right d-none d-md-flex fs-15">
+                                    <small class="mr-3 mt-1 text-muted">Sep 13 , 2019 12:45 pm</small>
+                                    <a class="mr-3" data-toggle="tooltip" title="" data-original-title="Rated"><svg
+                                            class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="24"
+                                            viewBox="0 0 24 24" width="24">
                                             <path d="M0 0h24v24H0V0z" fill="none" />
                                             <path
-                                                d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                                                d="M17.11 10.83l-2.47-.21-1.2-.1-.47-1.11L12 7.13l-.97 2.28-.47 1.11-1.2.1-2.47.21 1.88 1.63.91.79-.27 1.17-.57 2.42 2.13-1.28 1.03-.63 1.03.63 2.13 1.28-.57-2.42-.27-1.17.91-.79z"
+                                                opacity=".3" />
+                                            <path
+                                                d="M22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24zm-7.41 5.18l.56 2.41-2.12-1.28-1.03-.62-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.16z" />
                                         </svg></a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"><i class="fe fe-share mr-2"></i> Reply</a>
-                                        <a class="dropdown-item" href="#"><i class="fe fe-alert-circle mr-2"></i>Report
-                                            Spam</a>
-                                        <a class="dropdown-item" href="#"><i class="fe fe-trash mr-2"></i>Delete</a>
-                                        <a class="dropdown-item" href="#"><i class="fe fe-printer mr-2"></i>Print</a>
-                                        <a class="dropdown-item" href="#"><i class="fe fe-filter mr-2"></i>Filter</a>
+                                    <a class="mr-3" data-toggle="tooltip" title="" data-original-title="Reply"><svg
+                                            class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="24"
+                                            viewBox="0 0 24 24" width="24">
+                                            <path d="M0 0h24v24H0V0z" fill="none" />
+                                            <path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z" />
+                                        </svg></a>
+                                    <div class="mr-3">
+                                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                            aria-expanded="false"><svg class="svg-icon"
+                                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                                                width="24">
+                                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                                <path
+                                                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                                            </svg></a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#"><i class="fe fe-share mr-2"></i> Reply</a>
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="fe fe-alert-circle mr-2"></i>Report
+                                                Spam</a>
+                                            <a class="dropdown-item" href="#"><i class="fe fe-trash mr-2"></i>Delete</a>
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="fe fe-printer mr-2"></i>Print</a>
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="fe fe-filter mr-2"></i>Filter</a>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="email-from media-title text-dark font-weight-semibold mt-1">Alica Nestle
+                                    <span class="text-muted font-weight-semibold">( alicnestle@gmail.com )</span>
+                                </div>
+                                <small class="email-to mb-0">to Adam Cotter ( adamcotter@gmail.com ) </small>
+                                <small class="email-date mr-2 d-md-none">Dec 13 , 2018 12:45 pm</small>
                             </div>
-                            <div class="email-from media-title text-dark font-weight-semibold mt-1">Alica Nestle <span
-                                    class="text-muted font-weight-semibold">( alicnestle@gmail.com )</span></div>
-                            <small class="email-to mb-0">to Adam Cotter ( adamcotter@gmail.com ) </small>
-                            <small class="email-date mr-2 d-md-none">Dec 13 , 2018 12:45 pm</small>
+                        </div>
+                    </div>
+                    <div class="email-body mt-5">
+                        <h6>Hi Sir/Madam</h6>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium,
+                            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                            vitae
+                            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                            fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+                        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+                        <p> Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because
+                            it
+                            is pain, but because occasionally circumstances occur in which toil and pain can procure him
+                            some great pleasure. To take a trivial example, which of us ever undertakes laborious
+                            physical
+                            exercise, except to obtain some advantage from it?</p>
+                        <p class="mb-0">Thanking you Sir/Madam</p>
+                        <hr>
+                        <div class="email-attch" data-exclude="true">
+                            <div class="float-right">
+                                <a href="#" data-toggle="tooltip" title="" data-original-title="Download"><svg
+                                        class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="24"
+                                        viewBox="0 0 24 24" width="24">
+                                        <path d="M0 0h24v24H0V0z" fill="none" />
+                                        <path d="M14.17 11H13V5h-2v6H9.83L12 13.17z" opacity=".3" />
+                                        <path
+                                            d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5z" />
+                                    </svg></a>
+                            </div>
+                            <p class="font-weight-semibold">3 Attachments <a href="#">View</a></p>
+                        </div>
+                        <div class="row" data-exclude="true">
+                            <div class="col-sm-6 col-lg-3 mt-4">
+                                <a class="" href="#">
+                                    <div class="border p-0 text-center">
+                                        <img src="<?php echo base_url('public/assets/images/files/file2.png'); ?>"
+                                            alt="img" class="w-80 mx-auto">
+                                    </div>
+                                    <div class="bg-light p-3 border border-top-0">
+                                        <i class="fa fa-file-excel-o mr-1"></i> xlsdocument.xls
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-lg-3 mt-4">
+                                <a class="" href="#">
+                                    <div class="border p-0 text-center">
+                                        <img src="<?php echo base_url('public/assets/images/files/doc.png'); ?>"
+                                            alt="img" class="w-80 mx-auto">
+                                    </div>
+                                    <div class="bg-light p-3 border border-top-0">
+                                        <i class="fa fa-file-word-o mr-1"></i> worddocument
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-lg-3 mt-4">
+                                <a class="" href="#">
+                                    <div class="border p-0 text-center">
+                                        <img src="<?php echo base_url('public/assets/images/files/doc.png'); ?>"
+                                            alt="img" class="w-80 mx-auto">
+                                    </div>
+                                    <div class="bg-light p-3 border border-top-0">
+                                        <i class="fa fa-file-word-o mr-1"></i> worddocument
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="email-body mt-5">
-                    <h6>Hi Sir/Madam</h6>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                        fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
-                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-                    <p> Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it
-                        is pain, but because occasionally circumstances occur in which toil and pain can procure him
-                        some great pleasure. To take a trivial example, which of us ever undertakes laborious physical
-                        exercise, except to obtain some advantage from it?</p>
-                    <p class="mb-0">Thanking you Sir/Madam</p>
-                    <hr>
-                    <div class="email-attch">
-                        <div class="float-right">
-                            <a href="#" data-toggle="tooltip" title="" data-original-title="Download"><svg
-                                    class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
-                                    width="24">
-                                    <path d="M0 0h24v24H0V0z" fill="none" />
-                                    <path d="M14.17 11H13V5h-2v6H9.83L12 13.17z" opacity=".3" />
-                                    <path
-                                        d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5z" />
-                                </svg></a>
-                        </div>
-                        <p class="font-weight-semibold">3 Attachments <a href="#">View</a></p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-lg-3 mt-4">
-                            <a class="" href="#">
-                                <div class="border p-0 text-center">
-                                    <img src="<?php echo base_url('public/assets/images/files/file2.png'); ?>" alt="img"
-                                        class="w-80 mx-auto">
-                                </div>
-                                <div class="bg-light p-3 border border-top-0">
-                                    <i class="fa fa-file-excel-o mr-1"></i> xlsdocument.xls
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-lg-3 mt-4">
-                            <a class="" href="#">
-                                <div class="border p-0 text-center">
-                                    <img src="<?php echo base_url('public/assets/images/files/doc.png'); ?>" alt="img"
-                                        class="w-80 mx-auto">
-                                </div>
-                                <div class="bg-light p-3 border border-top-0">
-                                    <i class="fa fa-file-word-o mr-1"></i> worddocument
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-lg-3 mt-4">
-                            <a class="" href="#">
-                                <div class="border p-0 text-center">
-                                    <img src="<?php echo base_url('public/assets/images/files/doc.png'); ?>" alt="img"
-                                        class="w-80 mx-auto">
-                                </div>
-                                <div class="bg-light p-3 border border-top-0">
-                                    <i class="fa fa-file-word-o mr-1"></i> worddocument
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                <div class="card-footer" data-exclude="true">
+                    <a class="btn btn-primary mt-1 mb-1" href="#"><i class="fa fa-reply"></i> Reply</a>
+                    <a class="btn btn-secondary mt-1 mb-1" href="#"><i class="fa fa-share"></i> Forward</a>
                 </div>
-            </div>
-            <div class="card-footer">
-                <a class="btn btn-primary mt-1 mb-1" href="#"><i class="fa fa-reply"></i> Reply</a>
-                <a class="btn btn-secondary mt-1 mb-1" href="#"><i class="fa fa-share"></i> Forward</a>
             </div>
         </div>
     </div>
@@ -258,6 +269,11 @@
 
 <!--Invoice js-->
 <script src="<?php echo base_url('public/assets/js/email.js'); ?>"></script>
+
+<!-- HTML2PDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- INTERNAL JS END -->
 </body>
 

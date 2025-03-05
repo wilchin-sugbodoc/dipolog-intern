@@ -122,14 +122,15 @@
                             <td colspan="4" class="font-weight-bold text-uppercase text-right h4 mb-0">Total Due</td>
                             <td class="font-weight-bold text-right h4 mb-0">$450.00</td>
                         </tr>
-                        <tr>
+                        <tr id="not-included">
                             <td colspan="5" class="text-right">
                                 <button type="button" class="btn btn-primary" onClick="javascript:window.print();"><i
                                         class="si si-wallet"></i> Pay Invoice</button>
-                                <button type="button" class="btn btn-secondary" onClick="printInvoice();"><i
-                                        class=" si si-paper-plane"></i> Print Invoice</button>
                                 <button type="button" class="btn btn-info" onClick="downloadInvoice();"><i
                                         class="si si-printer"></i> Download Invoice</button>
+                                <button type="button" class="btn btn-secondary" onClick="printInvoice();"><i
+                                        class=" si si-paper-plane"></i> Send Invoice</button>
+
                             </td>
                         </tr>
                     </table>

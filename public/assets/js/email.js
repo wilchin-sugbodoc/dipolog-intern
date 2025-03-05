@@ -1,56 +1,20 @@
 function downloadEmail() {
-  let newWindow = window.open("", "_blank");
+    let emailContent = document.getElementById("print-email");
 
-  let emailElement = document.querySelector(".email-body").cloneNode(true);
-  let emailHeaderFrom = document.querySelector(".email-from").cloneNode(true);
-  let emailHeaderTo = document.querySelector(".email-to").cloneNode(true);
-  let emailHeaderDate = document.querySelector(".email-date").cloneNode(true);
+    if (!emailContent) {
+        console.error("Error: No element found with id='print-email'");
+        return;
+    }
 
-  let attachments = emailElement.querySelector(".email-attch");
-  if (attachments) attachments.remove();
+    let emailClone = emailContent.cloneNode(true);
 
-  let files = emailElement.querySelector(".row");
-  if (files) files.remove();
+    emailClone.querySelectorAll('[data-exclude="true"]').forEach(el => el.remove());
 
-  newWindow.document.write(`
-        <html>
-            <head>
-                <title>Invoice</title>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-                <style>
-                    body { font-family: Arial, sans-serif; margin: 20px; padding: 0; }
-                    .card-body { width: 100%; max-width: 800px; margin: auto; }
-                </style>
-            </head>
-            <body>
-                <div class="card-body">
-                From: ${emailHeaderFrom.innerHTML}<br>
-                Receiver: ${emailHeaderTo.innerHTML}<br>
-                Date: ${emailHeaderDate.innerHTML}<br>
-                ${emailElement.innerHTML}
-                </div>
-                <script>
-                    window.onload = function() {
-                        let invoiceContent = document.querySelector('.card-body');
-
-                        html2pdf()
-                            .set({
-                                margin: 5,
-                                filename: 'Email.pdf',
-                                image: { type: 'jpeg', quality: 0.90 },
-                                html2canvas: { scale: 1, useCORS: true },
-                                jsPDF: { unit: 'mm', format: 'letter', orientation: 'landscape' }
-                            })
-                            .from(invoiceContent)
-                            .save()
-                            .then(() => {
-                                window.close(); // Close the new tab after download
-                            });
-                    };
-                </script>
-            </body>
-        </html>
-    `);
-
-  newWindow.document.close();
+    html2pdf(emailClone, {
+        margin: 10,
+        filename: 'email.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    });
 }
