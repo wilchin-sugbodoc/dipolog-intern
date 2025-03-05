@@ -22,7 +22,7 @@ $(function () {
     $('.call').click(function (event) {
       event.preventDefault();
       event.stopPropagation();
-      return $.growl.notice({
+      return $.growl.warning({
         message: "Call is ongoing"
       });
     });
