@@ -722,11 +722,6 @@ $(function (e) {
   var spark8 = new ApexCharts(document.querySelector("#spark8"), spark8);
   spark8.render();
 
-  var sparklineData9 = [
-    0, 23, 45, 78, 55, 13, 63, 31, 97, 14, 53, 29, 66, 75, 52, 18, 66, 84, 55,
-    11, 87, 59, 22, 91,
-  ];
-
   for (var i = 0; i < 1000; i++) {}
   //Spark9
   var spark9 = {
@@ -759,7 +754,10 @@ $(function (e) {
     series: [
       {
         name: "New Expenses",
-        data: randomizeArray(sparklineData9),
+        data: [
+          0, 23, 45, 78, 55, 13, 63, 31, 97, 14, 53, 29, 66, 75, 52, 18, 66, 84, 55,
+          11, 87, 59, 22, 91,
+        ],
       },
     ],
     yaxis: {
