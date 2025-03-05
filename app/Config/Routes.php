@@ -31,6 +31,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
+$routes->get('/pages/email-compose', 'EmailComposerController::index');
+$routes->post('/pages/email-compose', 'EmailComposerController::sendEmail');
+$routes->get('/pages/email-inbox', 'EmailComposerController::inbox');
+$routes->get('/pages/email-read/(:num)', 'EmailComposerController::readEmail/$1');
 
 /**
  * --------------------------------------------------------------------
