@@ -175,7 +175,6 @@
                                 <?php if (!empty($emails)): ?>
                                 <?php foreach ($emails as $email): ?>
                                 <tr class="<?= $email['is_read'] ? '' : 'unread'; ?>">
-                                    <!-- Checkbox for selecting email -->
                                     <td class="inbox-small-cells">
                                         <label class="custom-control custom-checkbox mb-0">
                                             <input type="checkbox" class="custom-control-input email-checkbox"
@@ -184,34 +183,33 @@
                                         </label>
                                     </td>
 
-                                    <!-- Starred email indicator -->
                                     <td class="inbox-small-cells">
                                         <i
                                             class="fa fa-star <?= ($email['is_starred'] ?? false) ? 'text-warning' : ''; ?>"></i>
                                     </td>
 
-                                    <!-- Bookmark icon -->
                                     <td class="inbox-small-cells">
                                         <i
                                             class="fa fa-bookmark <?= ($email['is_important'] ?? false) ? 'text-danger' : ''; ?>"></i>
                                     </td>
 
-                                    <!-- Sender Name -->
                                     <td class="view-message dont-show font-weight-semibold">
-                                        To: <?= esc($email['receiver_name']) ?>
+                                        <a href="<?= base_url('pages/email-read/' . $email['email_id']) ?>">
+                                            To: <?= esc($email['receiver_name']) ?>
+                                        </a>
                                     </td>
 
-                                    <!-- Subject & Message Preview -->
                                     <td class="view-message">
                                         <a href="<?= base_url('pages/email-read/' . $email['email_id']) ?>">
                                             <?= esc($email['subject']) ?>
+                                            - <?= esc(substr($email['body'], 0, 50)) ?>...
                                         </a>
-                                        - <?= esc(substr($email['body'], 0, 50)) ?>...
                                     </td>
 
-                                    <!-- Timestamp (Right-aligned) -->
                                     <td class="view-message text-right font-weight-semibold">
-                                        <?= date('M d, Y h:i A', strtotime($email['timestamp'])) ?>
+                                        <a href="<?= base_url('pages/email-read/' . $email['email_id']) ?>">
+                                            <?= date('M d, Y h:i A', strtotime($email['timestamp'])) ?>
+                                        </a>
                                     </td>
                                 </tr>
                                 <?php endforeach; ?>
