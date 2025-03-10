@@ -23,7 +23,7 @@ class EmailComposerController extends BaseController
                receiver.username AS receiver_name
             FROM email e
             JOIN email_recipients er ON e.email_id = er.email_id
-            JOIN users receiver ON er.receiver_ID = receiver.user_id
+            JOIN users_email receiver ON er.receiver_ID = receiver.user_id
             WHERE e.sender_ID = ?
             ORDER BY e.timestamp DESC
         ", [$userId]);
@@ -82,7 +82,7 @@ class EmailComposerController extends BaseController
     private function getOrCreateUser($email)
     {
         $db = \Config\Database::connect();
-        $builder = $db->table('users');
+        $builder = $db->table('users_email');
 
         $user = $builder->getWhere(['email' => $email])->getRowArray();
         if ($user) {
@@ -111,9 +111,9 @@ class EmailComposerController extends BaseController
                 sender.username AS sender_name, sender.email AS sender_email, 
                 receiver.username AS receiver_name, receiver.email AS receiver_email
             FROM email e
-            JOIN users sender ON e.sender_ID = sender.user_id
+            JOIN users_email sender ON e.sender_ID = sender.user_id
             JOIN email_recipients er ON e.email_ID = er.email_ID
-            JOIN users receiver ON er.receiver_ID = receiver.user_id
+            JOIN users_email receiver ON er.receiver_ID = receiver.user_id
             WHERE e.email_id = ?
         ", [$emailId]);
 
@@ -135,7 +135,7 @@ class EmailComposerController extends BaseController
     private function generateUniqueUsername($email)
     {
         $db = \Config\Database::connect();
-        $builder = $db->table('users');
+        $builder = $db->table('users_email');
 
         $emailParts = explode('@', $email);
         $nameParts = explode('.', $emailParts[0]); 

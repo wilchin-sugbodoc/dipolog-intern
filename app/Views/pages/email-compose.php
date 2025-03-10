@@ -121,7 +121,7 @@
                     <a href="#" class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2">
                         <span class="w-3 h-3 brround bg-danger-transparent mr-2"></span> Settings
                     </a>
-                </div>
+                    </div>
             </div>
         </div>
     </div>
